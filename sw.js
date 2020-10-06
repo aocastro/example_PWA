@@ -1,0 +1,3 @@
+self.addEventListener('install', function(event) {
+    // Iniciaria os passos para instalação do nosso service worker...
+})

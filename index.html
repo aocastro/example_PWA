@@ -8,6 +8,19 @@
     <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
     <link rel="manifest" href="manifest.json">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <!-- Script de carregamento do service worker -->
+    <script>
+        if ('servicerWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('sw.js').then(function(registration) {
+                    console.log('Service Worker registrado com sucesso, com escopo: ', registration.scope)
+                }, function(err) {
+                    console.log('Erro ao registrar o Service Worker: ', err)
+                })
+            })
+        }
+    </script>
 </head>
 
 <body>
